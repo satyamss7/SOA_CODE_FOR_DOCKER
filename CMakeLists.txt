@@ -24,7 +24,11 @@ target_link_libraries(response-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LI
 add_executable(subscribe-sample subscribe-sample.cpp ${EXAMPLE_CONFIG_FILES})
 target_link_libraries(subscribe-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY})
 
-add_executable(notify-sample notify-sample.cpp hello.cpp serial.cpp ${EXAMPLE_CONFIG_FILES})
+#add_executable(notify-sample notify-sample.cpp hello.cpp serial.cpp ${EXAMPLE_CONFIG_FILES})
+#target_link_libraries(notify-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY} -lCppLinuxSerial -pthread)
+
+
+add_executable(notify-sample notify-sample.cpp serial.cpp ${EXAMPLE_CONFIG_FILES})
 target_link_libraries(notify-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY} -lCppLinuxSerial -pthread)
 
 #add_executable(cli cli.cpp ${EXAMPLE_CONFIG_FILES})
